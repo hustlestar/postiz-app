@@ -28,7 +28,7 @@ const type = [
   },
 ];
 
-const madeForKids = [
+const yesNo = [
   {
     label: 'No',
     value: 'no',
@@ -65,7 +65,22 @@ const YoutubeSettings: FC = () => {
           value: 'no',
         })}
       >
-        {madeForKids.map((t) => (
+        {yesNo.map((t) => (
+          <option key={t.value} value={t.value}>
+            {t.label}
+          </option>
+        ))}
+      </Select>
+      <Select
+        label={t(
+          'youtube_altered_or_synthetic_content',
+          'Altered or synthetic content'
+        )}
+        {...register('containsSyntheticMedia', {
+          value: 'no',
+        })}
+      >
+        {yesNo.map((t) => (
           <option key={t.value} value={t.value}>
             {t.label}
           </option>
